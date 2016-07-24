@@ -13,8 +13,10 @@ if [ -z "$GIT" ]; then
 fi
 
 if [ -z "$PROJ_DIR" ]; then
-	echo "Please specify a project name."
-	exit 1
+	echo "Project name not specified. Use the default 'rest-ws-starter'"
+	PROJ_DIR='rest-ws-starter'
+	# echo "Please specify a project name."
+	# exit 1
 fi
 
 if [ -d "$PROJ_DIR" ]; then
