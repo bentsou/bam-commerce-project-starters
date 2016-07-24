@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GIT=`which git`
-GIT_REMOTE="https://github.mlbam.net/btsou/git-demo"
+GIT_REMOTE="https://github.mlbam.net/btsou/rest-ws-starter"
 
 echo "Enter the name of the project:"
 read PROJ_DIR
