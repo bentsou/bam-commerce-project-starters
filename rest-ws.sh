@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GIT=`which git`
-GIT_REMOTE="https://github.mlbam.net/btsou/rest-ws-starter"
+GIT_REMOTE="https://github.mlbam.net/btsou/rest-ws-starter.git"
 
 echo "Enter the name of the project:"
 read PROJ_DIR
@@ -25,10 +25,12 @@ if [ -d "$PROJ_DIR" ]; then
 fi
 
 printf "It's a go! Creating a project @ \e[36m$PROJ_DIR\e[0m from \e[2m$GIT_REMOTE\e[0m\n"
-`$GIT clone $GIT_REMOTE $PROJ_DIR`
-
-# Clean up
-echo "Clean up."
-`rm -rf ./$PROJ_DIR/.git`
+$GIT clone $GIT_REMOTE $PROJ_DIR
+rm -rf ./$PROJ_DIR/.git
+cd ./$PROJ_DIR
+$GIT init
+$GIT add --all
+$GIT commit -m"Initial commit"
+chdir ..
 
 echo "All done. 👍"
