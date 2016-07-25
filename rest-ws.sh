@@ -5,7 +5,7 @@ exists()
   command -v "$1" >/dev/null 2>&1
 }
 
-GIT=`command -v git >/dev/null 2>&1`
+GIT=`command -v git`
 GIT_REMOTE="https://github.mlbam.net/btsou/rest-ws-starter.git"
 
 echo "Enter the name of the project:"
