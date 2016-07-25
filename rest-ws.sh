@@ -1,15 +1,29 @@
 #!/bin/bash
 
-GIT=`which git`
+exists()
+{
+  command -v "$1" >/dev/null 2>&1
+}
+
+GIT=`command -v git >/dev/null 2>&1`
 GIT_REMOTE="https://github.mlbam.net/btsou/rest-ws-starter.git"
 
 echo "Enter the name of the project:"
 read PROJ_DIR
 
 # Input checks
-if [ -z "$GIT" ]; then
-	echo "git is not installed. Abort."
-	exit 1
+if exists bash; then
+  echo 'Bash exists!'
+else
+  echo 'Your system does not have Bash'
+  exit 1
+fi
+
+if exists git; then
+  echo 'Git exists!'
+else
+  echo "git is not installed. Abort."
+  exit 1
 fi
 
 if [ -z "$PROJ_DIR" ]; then
